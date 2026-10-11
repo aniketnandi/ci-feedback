@@ -106,3 +106,15 @@ func TestErrorMessagesNameTheFile(t *testing.T) {
 		t.Errorf("stderr = %q", stderr)
 	}
 }
+
+func TestVersion(t *testing.T) {
+	code, out, _ := runCLI(t, "", "-version")
+	if code != exitOK || !strings.HasPrefix(out, "ci-feedback ") {
+		t.Errorf("exit %d, output %q", code, out)
+	}
+	defer func(v string) { version = v }(version)
+	version = "v9.9.9"
+	if _, out, _ := runCLI(t, "", "-version"); out != "ci-feedback v9.9.9\n" {
+		t.Errorf("ldflags version not used: %q", out)
+	}
+}

@@ -10,6 +10,7 @@ import (
 	"io"
 	"os"
 	"runtime"
+	"runtime/debug"
 	"strings"
 	"time"
 
@@ -27,7 +28,19 @@ const (
 	exitUsage = 2 // bad flags, unreadable or unparsable input
 )
 
-var version = "dev"
+// version can be set at build time with -ldflags "-X main.version=v1.2.3";
+// otherwise it comes from the module version stamped by `go install`.
+var version string
+
+func versionString() string {
+	if version != "" {
+		return version
+	}
+	if bi, ok := debug.ReadBuildInfo(); ok && bi.Main.Version != "" && bi.Main.Version != "(devel)" {
+		return bi.Main.Version
+	}
+	return "dev"
+}
 
 const usage = `Usage: ci-feedback [flags] FILE...
 
@@ -77,7 +90,7 @@ func run(args []string, stdin io.Reader, stdout, stderr io.Writer) int {
 		return exitUsage
 	}
 	if *showVer {
-		fmt.Fprintln(stdout, "ci-feedback", version)
+		fmt.Fprintln(stdout, "ci-feedback", versionString())
 		return exitOK
 	}
 	fail := func(err error) int {

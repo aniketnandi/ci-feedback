@@ -1,5 +1,7 @@
 # ci-feedback
 
+[![ci](https://github.com/aniketnandi/ci-feedback/actions/workflows/ci.yml/badge.svg)](https://github.com/aniketnandi/ci-feedback/actions/workflows/ci.yml)
+
 A small Go CLI that reads test reports and tells you, in a few lines, what
 actually needs your attention: **what failed and why, which tests are flaky,
 and which are slow**. It exits non-zero based on rules you choose, so it can
@@ -93,7 +95,7 @@ ci-feedback [flags] FILE...
 | `-ignore` | | Glob of tests to skip, matched against the full name (`pkg.TestName`) and the bare name. `*` matches anything. Repeatable |
 | `-config` | `.ci-feedback.json` if present | Rules file (see below) |
 | `-j` | number of CPUs | Number of files to parse in parallel |
-| `-version` | | Print the version |
+| `-version` | | Print the version (the release tag when installed with `go install`) |
 
 ### Exit codes
 
