@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Maven Surefire report with -Dsurefire.rerunFailingTestsCount=2 -->
+<testsuites name="orders-service" tests="7" failures="2" errors="1" skipped="1" time="14.82">
+  <testsuite name="com.acme.orders.OrderServiceTest" tests="4" failures="1" errors="0" skipped="1" time="6.41">
+    <testcase name="createsOrder" classname="com.acme.orders.OrderServiceTest" time="0.112"/>
+    <testcase name="appliesCoupon" classname="com.acme.orders.OrderServiceTest" time="0.087">
+      <failure message="expected: &lt;90.00&gt; but was: &lt;100.00&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;90.00&gt; but was: &lt;100.00&gt;
+	at com.acme.orders.OrderServiceTest.appliesCoupon(OrderServiceTest.java:58)</failure>
+    </testcase>
+    <testcase name="publishesEvent" classname="com.acme.orders.OrderServiceTest" time="5.904">
+      <flakyFailure message="Timed out waiting for message on topic orders.created" type="org.awaitility.core.ConditionTimeoutException">org.awaitility.core.ConditionTimeoutException: Timed out waiting for message on topic orders.created
+	at com.acme.orders.OrderServiceTest.publishesEvent(OrderServiceTest.java:91)</flakyFailure>
+    </testcase>
+    <testcase name="legacyExport" classname="com.acme.orders.OrderServiceTest" time="0">
+      <skipped message="disabled until export v2 lands"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="com.acme.orders.PaymentGatewayIT" tests="3" failures="1" errors="1" skipped="0" time="8.41">
+    <testcase name="chargesCard" classname="com.acme.orders.PaymentGatewayIT" time="3.210"/>
+    <testcase name="refundsCard" classname="com.acme.orders.PaymentGatewayIT" time="2.004">
+      <error message="Connection refused: localhost/127.0.0.1:8089" type="java.net.ConnectException">java.net.ConnectException: Connection refused: localhost/127.0.0.1:8089
+	at com.acme.orders.PaymentGatewayIT.refundsCard(PaymentGatewayIT.java:44)</error>
+      <rerunError message="Connection refused: localhost/127.0.0.1:8089" type="java.net.ConnectException">java.net.ConnectException: Connection refused</rerunError>
+      <rerunError message="Connection refused: localhost/127.0.0.1:8089" type="java.net.ConnectException">java.net.ConnectException: Connection refused</rerunError>
+    </testcase>
+    <testcase name="handlesDecline" classname="com.acme.orders.PaymentGatewayIT" time="3.196">
+      <failure message="Cannot invoke &quot;Response.status()&quot; because &quot;resp&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke "Response.status()" because "resp" is null
+	at com.acme.orders.PaymentGatewayIT.handlesDecline(PaymentGatewayIT.java:71)</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

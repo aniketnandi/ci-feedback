@@ -1,0 +1,13 @@
+{
+  "slow_threshold": "1.5s",
+  "top_slow": 5,
+  "fail_on": ["failures", "flaky"],
+  "ignore": ["*LegacyDiscount"],
+  "signatures": [
+    {
+      "name": "db-unavailable",
+      "pattern": "127\\.0\\.0\\.1:5432|could not connect to server",
+      "hint": "Postgres service container is not ready; add a health check to the job"
+    }
+  ]
+}

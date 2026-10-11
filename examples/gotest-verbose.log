@@ -1,0 +1,23 @@
+=== RUN   TestAddItem
+--- PASS: TestAddItem (0.00s)
+=== RUN   TestCheckoutSlow
+--- PASS: TestCheckoutSlow (2.30s)
+=== RUN   TestCacheWarmup
+    cart_test.go:18: cache warmup: context deadline exceeded after 50ms
+--- FAIL: TestCacheWarmup (0.00s)
+=== RUN   TestParsePrice
+=== RUN   TestParsePrice/valid
+=== RUN   TestParsePrice/negative
+    cart_test.go:25: ParsePrice("-1") = 1, expected error but got nil
+--- FAIL: TestParsePrice (0.00s)
+    --- PASS: TestParsePrice/valid (0.00s)
+    --- FAIL: TestParsePrice/negative (0.00s)
+=== RUN   TestInventoryClient
+    cart_test.go:30: dial tcp 127.0.0.1:5432: connect: connection refused
+--- FAIL: TestInventoryClient (0.00s)
+=== RUN   TestLegacyDiscount
+    cart_test.go:33: legacy pricing disabled
+--- SKIP: TestLegacyDiscount (0.00s)
+FAIL
+FAIL	example.com/shop/cart	2.305s
+FAIL

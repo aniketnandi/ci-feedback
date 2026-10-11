@@ -1,0 +1,27 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: gofmt
+        run: test -z "$(gofmt -l .)" || (gofmt -l . && exit 1)
+
+      - name: vet
+        run: go vet ./...
+
+      # Dogfooding: let ci-feedback decide whether the job fails.
+      - name: test
+        run: go test -race -count=1 -json ./... > test-report.json || true
+
+      - name: ci-feedback
+        run: go run . -output github -fail-on failures,flaky -slow 5s test-report.json

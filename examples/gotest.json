@@ -1,0 +1,110 @@
+{"Time":"2026-10-11T09:04:52.736497748Z","Action":"start","Package":"example.com/shop/cart"}
+{"Time":"2026-10-11T09:04:52.739846599Z","Action":"run","Package":"example.com/shop/cart","Test":"TestAddItem"}
+{"Time":"2026-10-11T09:04:52.739897361Z","Action":"output","Package":"example.com/shop/cart","Test":"TestAddItem","Output":"=== RUN   TestAddItem\n"}
+{"Time":"2026-10-11T09:04:52.739981871Z","Action":"output","Package":"example.com/shop/cart","Test":"TestAddItem","Output":"--- PASS: TestAddItem (0.00s)\n"}
+{"Time":"2026-10-11T09:04:52.740001049Z","Action":"pass","Package":"example.com/shop/cart","Test":"TestAddItem","Elapsed":0}
+{"Time":"2026-10-11T09:04:52.740086689Z","Action":"run","Package":"example.com/shop/cart","Test":"TestCheckoutSlow"}
+{"Time":"2026-10-11T09:04:52.740105309Z","Action":"output","Package":"example.com/shop/cart","Test":"TestCheckoutSlow","Output":"=== RUN   TestCheckoutSlow\n"}
+{"Time":"2026-10-11T09:04:55.040312564Z","Action":"output","Package":"example.com/shop/cart","Test":"TestCheckoutSlow","Output":"--- PASS: TestCheckoutSlow (2.30s)\n"}
+{"Time":"2026-10-11T09:04:55.040386422Z","Action":"pass","Package":"example.com/shop/cart","Test":"TestCheckoutSlow","Elapsed":2.3}
+{"Time":"2026-10-11T09:04:55.040509311Z","Action":"run","Package":"example.com/shop/cart","Test":"TestCacheWarmup"}
+{"Time":"2026-10-11T09:04:55.040517409Z","Action":"output","Package":"example.com/shop/cart","Test":"TestCacheWarmup","Output":"=== RUN   TestCacheWarmup\n"}
+{"Time":"2026-10-11T09:04:55.040529009Z","Action":"output","Package":"example.com/shop/cart","Test":"TestCacheWarmup","Output":"    cart_test.go:18: cache warmup: context deadline exceeded after 50ms\n"}
+{"Time":"2026-10-11T09:04:55.040539675Z","Action":"output","Package":"example.com/shop/cart","Test":"TestCacheWarmup","Output":"--- FAIL: TestCacheWarmup (0.00s)\n"}
+{"Time":"2026-10-11T09:04:55.040543133Z","Action":"fail","Package":"example.com/shop/cart","Test":"TestCacheWarmup","Elapsed":0}
+{"Time":"2026-10-11T09:04:55.040557658Z","Action":"run","Package":"example.com/shop/cart","Test":"TestParsePrice"}
+{"Time":"2026-10-11T09:04:55.040560431Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice","Output":"=== RUN   TestParsePrice\n"}
+{"Time":"2026-10-11T09:04:55.040579381Z","Action":"run","Package":"example.com/shop/cart","Test":"TestParsePrice/valid"}
+{"Time":"2026-10-11T09:04:55.040585287Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice/valid","Output":"=== RUN   TestParsePrice/valid\n"}
+{"Time":"2026-10-11T09:04:55.04060156Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice/valid","Output":"--- PASS: TestParsePrice/valid (0.00s)\n"}
+{"Time":"2026-10-11T09:04:55.040607414Z","Action":"pass","Package":"example.com/shop/cart","Test":"TestParsePrice/valid","Elapsed":0}
+{"Time":"2026-10-11T09:04:55.040624236Z","Action":"run","Package":"example.com/shop/cart","Test":"TestParsePrice/negative"}
+{"Time":"2026-10-11T09:04:55.040629437Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice/negative","Output":"=== RUN   TestParsePrice/negative\n"}
+{"Time":"2026-10-11T09:04:55.040633259Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice/negative","Output":"    cart_test.go:25: ParsePrice(\"-1\") = 1, expected error but got nil\n"}
+{"Time":"2026-10-11T09:04:55.040638608Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice/negative","Output":"--- FAIL: TestParsePrice/negative (0.00s)\n"}
+{"Time":"2026-10-11T09:04:55.040643913Z","Action":"fail","Package":"example.com/shop/cart","Test":"TestParsePrice/negative","Elapsed":0}
+{"Time":"2026-10-11T09:04:55.040647087Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice","Output":"--- FAIL: TestParsePrice (0.00s)\n"}
+{"Time":"2026-10-11T09:04:55.040650325Z","Action":"fail","Package":"example.com/shop/cart","Test":"TestParsePrice","Elapsed":0}
+{"Time":"2026-10-11T09:04:55.04065332Z","Action":"run","Package":"example.com/shop/cart","Test":"TestInventoryClient"}
+{"Time":"2026-10-11T09:04:55.040684526Z","Action":"output","Package":"example.com/shop/cart","Test":"TestInventoryClient","Output":"=== RUN   TestInventoryClient\n"}
+{"Time":"2026-10-11T09:04:55.040691903Z","Action":"output","Package":"example.com/shop/cart","Test":"TestInventoryClient","Output":"    cart_test.go:30: dial tcp 127.0.0.1:5432: connect: connection refused\n"}
+{"Time":"2026-10-11T09:04:55.040696468Z","Action":"output","Package":"example.com/shop/cart","Test":"TestInventoryClient","Output":"--- FAIL: TestInventoryClient (0.00s)\n"}
+{"Time":"2026-10-11T09:04:55.040704551Z","Action":"fail","Package":"example.com/shop/cart","Test":"TestInventoryClient","Elapsed":0}
+{"Time":"2026-10-11T09:04:55.040708337Z","Action":"run","Package":"example.com/shop/cart","Test":"TestLegacyDiscount"}
+{"Time":"2026-10-11T09:04:55.040730727Z","Action":"output","Package":"example.com/shop/cart","Test":"TestLegacyDiscount","Output":"=== RUN   TestLegacyDiscount\n"}
+{"Time":"2026-10-11T09:04:55.040738368Z","Action":"output","Package":"example.com/shop/cart","Test":"TestLegacyDiscount","Output":"    cart_test.go:33: legacy pricing disabled\n"}
+{"Time":"2026-10-11T09:04:55.040743181Z","Action":"output","Package":"example.com/shop/cart","Test":"TestLegacyDiscount","Output":"--- SKIP: TestLegacyDiscount (0.00s)\n"}
+{"Time":"2026-10-11T09:04:55.040746487Z","Action":"skip","Package":"example.com/shop/cart","Test":"TestLegacyDiscount","Elapsed":0}
+{"Time":"2026-10-11T09:04:55.040749954Z","Action":"run","Package":"example.com/shop/cart","Test":"TestAddItem"}
+{"Time":"2026-10-11T09:04:55.040753346Z","Action":"output","Package":"example.com/shop/cart","Test":"TestAddItem","Output":"=== RUN   TestAddItem\n"}
+{"Time":"2026-10-11T09:04:55.040756805Z","Action":"output","Package":"example.com/shop/cart","Test":"TestAddItem","Output":"--- PASS: TestAddItem (0.00s)\n"}
+{"Time":"2026-10-11T09:04:55.040763596Z","Action":"pass","Package":"example.com/shop/cart","Test":"TestAddItem","Elapsed":0}
+{"Time":"2026-10-11T09:04:55.040766598Z","Action":"run","Package":"example.com/shop/cart","Test":"TestCheckoutSlow"}
+{"Time":"2026-10-11T09:04:55.040769262Z","Action":"output","Package":"example.com/shop/cart","Test":"TestCheckoutSlow","Output":"=== RUN   TestCheckoutSlow\n"}
+{"Time":"2026-10-11T09:04:57.341736807Z","Action":"output","Package":"example.com/shop/cart","Test":"TestCheckoutSlow","Output":"--- PASS: TestCheckoutSlow (2.30s)\n"}
+{"Time":"2026-10-11T09:04:57.341812827Z","Action":"pass","Package":"example.com/shop/cart","Test":"TestCheckoutSlow","Elapsed":2.3}
+{"Time":"2026-10-11T09:04:57.341836105Z","Action":"run","Package":"example.com/shop/cart","Test":"TestCacheWarmup"}
+{"Time":"2026-10-11T09:04:57.341840811Z","Action":"output","Package":"example.com/shop/cart","Test":"TestCacheWarmup","Output":"=== RUN   TestCacheWarmup\n"}
+{"Time":"2026-10-11T09:04:57.341846307Z","Action":"output","Package":"example.com/shop/cart","Test":"TestCacheWarmup","Output":"--- PASS: TestCacheWarmup (0.00s)\n"}
+{"Time":"2026-10-11T09:04:57.341849458Z","Action":"pass","Package":"example.com/shop/cart","Test":"TestCacheWarmup","Elapsed":0}
+{"Time":"2026-10-11T09:04:57.341862815Z","Action":"run","Package":"example.com/shop/cart","Test":"TestParsePrice"}
+{"Time":"2026-10-11T09:04:57.341865949Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice","Output":"=== RUN   TestParsePrice\n"}
+{"Time":"2026-10-11T09:04:57.341869893Z","Action":"run","Package":"example.com/shop/cart","Test":"TestParsePrice/valid"}
+{"Time":"2026-10-11T09:04:57.34187256Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice/valid","Output":"=== RUN   TestParsePrice/valid\n"}
+{"Time":"2026-10-11T09:04:57.341876195Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice/valid","Output":"--- PASS: TestParsePrice/valid (0.00s)\n"}
+{"Time":"2026-10-11T09:04:57.341879613Z","Action":"pass","Package":"example.com/shop/cart","Test":"TestParsePrice/valid","Elapsed":0}
+{"Time":"2026-10-11T09:04:57.341882512Z","Action":"run","Package":"example.com/shop/cart","Test":"TestParsePrice/negative"}
+{"Time":"2026-10-11T09:04:57.341904196Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice/negative","Output":"=== RUN   TestParsePrice/negative\n"}
+{"Time":"2026-10-11T09:04:57.34190792Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice/negative","Output":"    cart_test.go:25: ParsePrice(\"-1\") = 1, expected error but got nil\n"}
+{"Time":"2026-10-11T09:04:57.341912474Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice/negative","Output":"--- FAIL: TestParsePrice/negative (0.00s)\n"}
+{"Time":"2026-10-11T09:04:57.341916776Z","Action":"fail","Package":"example.com/shop/cart","Test":"TestParsePrice/negative","Elapsed":0}
+{"Time":"2026-10-11T09:04:57.34192364Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice","Output":"--- FAIL: TestParsePrice (0.00s)\n"}
+{"Time":"2026-10-11T09:04:57.341928135Z","Action":"fail","Package":"example.com/shop/cart","Test":"TestParsePrice","Elapsed":0}
+{"Time":"2026-10-11T09:04:57.341931021Z","Action":"run","Package":"example.com/shop/cart","Test":"TestInventoryClient"}
+{"Time":"2026-10-11T09:04:57.341933804Z","Action":"output","Package":"example.com/shop/cart","Test":"TestInventoryClient","Output":"=== RUN   TestInventoryClient\n"}
+{"Time":"2026-10-11T09:04:57.341936807Z","Action":"output","Package":"example.com/shop/cart","Test":"TestInventoryClient","Output":"    cart_test.go:30: dial tcp 127.0.0.1:5432: connect: connection refused\n"}
+{"Time":"2026-10-11T09:04:57.341940441Z","Action":"output","Package":"example.com/shop/cart","Test":"TestInventoryClient","Output":"--- FAIL: TestInventoryClient (0.00s)\n"}
+{"Time":"2026-10-11T09:04:57.341943356Z","Action":"fail","Package":"example.com/shop/cart","Test":"TestInventoryClient","Elapsed":0}
+{"Time":"2026-10-11T09:04:57.341946259Z","Action":"run","Package":"example.com/shop/cart","Test":"TestLegacyDiscount"}
+{"Time":"2026-10-11T09:04:57.341949074Z","Action":"output","Package":"example.com/shop/cart","Test":"TestLegacyDiscount","Output":"=== RUN   TestLegacyDiscount\n"}
+{"Time":"2026-10-11T09:04:57.34195184Z","Action":"output","Package":"example.com/shop/cart","Test":"TestLegacyDiscount","Output":"    cart_test.go:33: legacy pricing disabled\n"}
+{"Time":"2026-10-11T09:04:57.34195525Z","Action":"output","Package":"example.com/shop/cart","Test":"TestLegacyDiscount","Output":"--- SKIP: TestLegacyDiscount (0.00s)\n"}
+{"Time":"2026-10-11T09:04:57.341965983Z","Action":"skip","Package":"example.com/shop/cart","Test":"TestLegacyDiscount","Elapsed":0}
+{"Time":"2026-10-11T09:04:57.341969076Z","Action":"run","Package":"example.com/shop/cart","Test":"TestAddItem"}
+{"Time":"2026-10-11T09:04:57.34197216Z","Action":"output","Package":"example.com/shop/cart","Test":"TestAddItem","Output":"=== RUN   TestAddItem\n"}
+{"Time":"2026-10-11T09:04:57.341975671Z","Action":"output","Package":"example.com/shop/cart","Test":"TestAddItem","Output":"--- PASS: TestAddItem (0.00s)\n"}
+{"Time":"2026-10-11T09:04:57.341978732Z","Action":"pass","Package":"example.com/shop/cart","Test":"TestAddItem","Elapsed":0}
+{"Time":"2026-10-11T09:04:57.34198787Z","Action":"run","Package":"example.com/shop/cart","Test":"TestCheckoutSlow"}
+{"Time":"2026-10-11T09:04:57.341990622Z","Action":"output","Package":"example.com/shop/cart","Test":"TestCheckoutSlow","Output":"=== RUN   TestCheckoutSlow\n"}
+{"Time":"2026-10-11T09:04:59.644155332Z","Action":"output","Package":"example.com/shop/cart","Test":"TestCheckoutSlow","Output":"--- PASS: TestCheckoutSlow (2.30s)\n"}
+{"Time":"2026-10-11T09:04:59.644220918Z","Action":"pass","Package":"example.com/shop/cart","Test":"TestCheckoutSlow","Elapsed":2.3}
+{"Time":"2026-10-11T09:04:59.644239215Z","Action":"run","Package":"example.com/shop/cart","Test":"TestCacheWarmup"}
+{"Time":"2026-10-11T09:04:59.644244139Z","Action":"output","Package":"example.com/shop/cart","Test":"TestCacheWarmup","Output":"=== RUN   TestCacheWarmup\n"}
+{"Time":"2026-10-11T09:04:59.644249618Z","Action":"output","Package":"example.com/shop/cart","Test":"TestCacheWarmup","Output":"--- PASS: TestCacheWarmup (0.00s)\n"}
+{"Time":"2026-10-11T09:04:59.644269755Z","Action":"pass","Package":"example.com/shop/cart","Test":"TestCacheWarmup","Elapsed":0}
+{"Time":"2026-10-11T09:04:59.644274909Z","Action":"run","Package":"example.com/shop/cart","Test":"TestParsePrice"}
+{"Time":"2026-10-11T09:04:59.64427774Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice","Output":"=== RUN   TestParsePrice\n"}
+{"Time":"2026-10-11T09:04:59.644285883Z","Action":"run","Package":"example.com/shop/cart","Test":"TestParsePrice/valid"}
+{"Time":"2026-10-11T09:04:59.64428868Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice/valid","Output":"=== RUN   TestParsePrice/valid\n"}
+{"Time":"2026-10-11T09:04:59.644292283Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice/valid","Output":"--- PASS: TestParsePrice/valid (0.00s)\n"}
+{"Time":"2026-10-11T09:04:59.644295505Z","Action":"pass","Package":"example.com/shop/cart","Test":"TestParsePrice/valid","Elapsed":0}
+{"Time":"2026-10-11T09:04:59.644299049Z","Action":"run","Package":"example.com/shop/cart","Test":"TestParsePrice/negative"}
+{"Time":"2026-10-11T09:04:59.644301794Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice/negative","Output":"=== RUN   TestParsePrice/negative\n"}
+{"Time":"2026-10-11T09:04:59.644304701Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice/negative","Output":"    cart_test.go:25: ParsePrice(\"-1\") = 1, expected error but got nil\n"}
+{"Time":"2026-10-11T09:04:59.644324063Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice/negative","Output":"--- FAIL: TestParsePrice/negative (0.00s)\n"}
+{"Time":"2026-10-11T09:04:59.644330956Z","Action":"fail","Package":"example.com/shop/cart","Test":"TestParsePrice/negative","Elapsed":0}
+{"Time":"2026-10-11T09:04:59.644335329Z","Action":"output","Package":"example.com/shop/cart","Test":"TestParsePrice","Output":"--- FAIL: TestParsePrice (0.00s)\n"}
+{"Time":"2026-10-11T09:04:59.644601938Z","Action":"fail","Package":"example.com/shop/cart","Test":"TestParsePrice","Elapsed":0}
+{"Time":"2026-10-11T09:04:59.644623827Z","Action":"run","Package":"example.com/shop/cart","Test":"TestInventoryClient"}
+{"Time":"2026-10-11T09:04:59.644627356Z","Action":"output","Package":"example.com/shop/cart","Test":"TestInventoryClient","Output":"=== RUN   TestInventoryClient\n"}
+{"Time":"2026-10-11T09:04:59.644631457Z","Action":"output","Package":"example.com/shop/cart","Test":"TestInventoryClient","Output":"    cart_test.go:30: dial tcp 127.0.0.1:5432: connect: connection refused\n"}
+{"Time":"2026-10-11T09:04:59.644642344Z","Action":"output","Package":"example.com/shop/cart","Test":"TestInventoryClient","Output":"--- FAIL: TestInventoryClient (0.00s)\n"}
+{"Time":"2026-10-11T09:04:59.644645569Z","Action":"fail","Package":"example.com/shop/cart","Test":"TestInventoryClient","Elapsed":0}
+{"Time":"2026-10-11T09:04:59.644649277Z","Action":"run","Package":"example.com/shop/cart","Test":"TestLegacyDiscount"}
+{"Time":"2026-10-11T09:04:59.644652201Z","Action":"output","Package":"example.com/shop/cart","Test":"TestLegacyDiscount","Output":"=== RUN   TestLegacyDiscount\n"}
+{"Time":"2026-10-11T09:04:59.644655154Z","Action":"output","Package":"example.com/shop/cart","Test":"TestLegacyDiscount","Output":"    cart_test.go:33: legacy pricing disabled\n"}
+{"Time":"2026-10-11T09:04:59.64465982Z","Action":"output","Package":"example.com/shop/cart","Test":"TestLegacyDiscount","Output":"--- SKIP: TestLegacyDiscount (0.00s)\n"}
+{"Time":"2026-10-11T09:04:59.644662839Z","Action":"skip","Package":"example.com/shop/cart","Test":"TestLegacyDiscount","Elapsed":0}
+{"Time":"2026-10-11T09:04:59.644669944Z","Action":"output","Package":"example.com/shop/cart","Output":"FAIL\n"}
+{"Time":"2026-10-11T09:04:59.644965706Z","Action":"output","Package":"example.com/shop/cart","Output":"FAIL\texample.com/shop/cart\t6.908s\n"}
+{"Time":"2026-10-11T09:04:59.645007991Z","Action":"fail","Package":"example.com/shop/cart","Elapsed":6.909}

@@ -1,0 +1,4 @@
+/ci-feedback
+/dist/
+*.test
+coverage.out

@@ -1,0 +1,22 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.4, pytest-8.3.2, pluggy-1.5.0
+plugins: rerunfailures-14.0
+collected 6 items
+
+tests/test_auth.py::test_login PASSED                                    [ 16%]
+tests/test_auth.py::test_logout PASSED                                   [ 33%]
+tests/test_search.py::test_query_index RERUN                             [ 50%]
+tests/test_search.py::test_query_index PASSED                            [ 50%]
+tests/test_search.py::test_fuzzy_match FAILED                            [ 66%]
+tests/test_upload.py::test_large_file SKIPPED (needs S3)                 [ 83%]
+tests/test_upload.py::test_resume FAILED                                 [100%]
+
+=================================== FAILURES ===================================
+______________________________ test_fuzzy_match ________________________________
+    def test_fuzzy_match():
+>       assert search("colour") == ["color"]
+E       AssertionError: assert [] == ['color']
+=========================== short test summary info ============================
+FAILED tests/test_search.py::test_fuzzy_match - AssertionError: assert [] == ['color']
+FAILED tests/test_upload.py::test_resume - ConnectionResetError: [Errno 104] Connection reset by peer
+========== 2 failed, 3 passed, 1 skipped, 1 rerun in 4.12s ==========
