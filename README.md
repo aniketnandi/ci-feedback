@@ -33,6 +33,31 @@ $ echo $?
 1
 ```
 
+## Quick start
+
+**In your browser, no install:** open a Codespace and run the commands
+below in its terminal.
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/aniketnandi/ci-feedback?quickstart=1)
+
+**On your machine** (needs [Go 1.22+](https://go.dev/dl)):
+
+```sh
+git clone https://github.com/aniketnandi/ci-feedback && cd ci-feedback
+```
+
+Then:
+
+```sh
+go run . examples/gotest.json          # Go test results
+go run . examples/junit-surefire.xml   # Java/Maven JUnit report
+go run . examples/pytest.log           # pytest log
+go test ./...                          # the project's own tests
+```
+
+The examples contain deliberate failures, flaky tests and slow tests, so
+each one ends in `RESULT: FAIL` with exit code 1. That's expected.
+
 ## Features
 
 - **Three input formats**, detected automatically:
